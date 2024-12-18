@@ -15,7 +15,7 @@ exports.forgotPassword = async (req, res, next) => {
     user.resetToken = resetToken;
     user.resetTokenExpiry = resetTokenExpiry;
     await user.save();
-
+    
     const resetLink = `https://login-melon-6789.netlify.app/reset-password/${resetToken}`;
 
     // Send email

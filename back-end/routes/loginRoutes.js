@@ -8,12 +8,12 @@ const router = express.Router();
 router.post('/forgot-password', forgotPassword);
 
 // POST: Reset password (uses validateToken middleware)
-router.post('/reset-password/:token', validateToken, resetPassword);
+//router.post('/reset-password/:token', validateToken, resetPassword);
 // GET: Validate token
-//router.get('/validate-reset/:token', validateToken);
+router.get('/reset-password/:token', validateToken);
 
 // POST: Reset password
-//router.post('/reset-password', resetPassword);
+router.post('/reset-password/:token', resetPassword);
 
 
 
