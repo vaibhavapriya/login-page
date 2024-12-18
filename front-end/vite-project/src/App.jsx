@@ -9,6 +9,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
+
       </Routes>
     </Router>
   );

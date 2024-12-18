@@ -4,6 +4,9 @@ const authRoutes = require('./routes/loginRoutes');
 const errorHandler = require('./middleware/errorHandler');
 //const errorHandler = require('./middleware/validToken');
 require('dotenv').config();
+const cors = require('cors');
+app.use(cors());
+
 
 const app = express();
 
@@ -12,10 +15,11 @@ connectDB();
 
 // Middleware
 app.use(express.json());
-app.use(errorHandler);
 
 // Routes
 app.use('/api', authRoutes);
+
+app.use(errorHandler);
 
 // Start server
 const PORT = process.env.PORT || 3000;

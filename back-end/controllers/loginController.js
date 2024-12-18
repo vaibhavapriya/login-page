@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-const User = require('../models/user');
+const User = require('../models/userSchema');
 
 // Send password reset email
 exports.forgotPassword = async (req, res, next) => {
