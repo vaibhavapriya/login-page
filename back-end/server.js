@@ -12,7 +12,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); // Use CORS middleware
+//app.use(cors()); // Use CORS middleware
+app.use(cors({
+    origin: 'https://login-melon-6789.netlify.app',
+}));
 app.use(express.json());
 
 // Routes
