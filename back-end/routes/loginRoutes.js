@@ -7,13 +7,12 @@ const router = express.Router();
 // POST: Send password reset email
 router.post('/forgot-password', forgotPassword);
 
-// POST: Reset password (uses validateToken middleware)
-//router.post('/reset-password/:token', validateToken, resetPassword);
-// GET: Validate token
-router.get('/reset-password/:token', validateToken);
+//POST: Reset password (uses validateToken middleware)
+router.post('/reset-password/:token', validateToken, resetPassword);
+
 
 // POST: Reset password
-router.post('/reset-password/:token', resetPassword);
+//router.post('/reset-password/:token', resetPassword);
 
 
 
