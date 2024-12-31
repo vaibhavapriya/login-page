@@ -3,14 +3,15 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Adminhome = () => {
-  const { userId } = useParams(); // Get userId from the URL params
+  //const { userId } = useParams(); // Get userId from the URL params
   const [userData, setUserData] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const token = localStorage.getItem('authToken'); // Get token from localStorage
+        const token = localStorage.getItem('token'); // Get token from localStorage
+        const userId= localStorage.getItem('userId');
 
         if (!token) {
           // If no token is present, redirect to login
@@ -30,11 +31,12 @@ const Adminhome = () => {
     };
 
     fetchUserData();
-  }, [userId, navigate]);
+  }, [ navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken'); // Remove token from localStorage
-    navigate('/login'); // Redirect to login page
+    localStorage.removeItem('token'); // Remove token from localStorage
+    localStorage.removeItem('userId');
+    navigate('/'); // Redirect to login page
   };
 
   if (!userData) {

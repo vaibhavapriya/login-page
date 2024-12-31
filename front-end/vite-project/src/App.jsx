@@ -5,13 +5,7 @@ import ResetPassword from './pages/ResetPassword';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Adminhome from './pages/Adminhome';
-
-const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = localStorage.getItem('token'); // Replace with your auth logic
-
-  return isAuthenticated ? children : <Navigate to="/" />;
-};
-
+import ProtectedRoute from '../components/ProtectedRoute';
 const App = () => {
   return (
     <Router>

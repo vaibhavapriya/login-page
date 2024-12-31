@@ -14,7 +14,10 @@ const Login = () => {
         try {
             const res = await axios.post('https://login-page-6789.onrender.com/auth/login', { email, password });
             const { token, id } = res.data;
+            console.log(id);
+            console.log(token);
             localStorage.setItem('token', token);
+            localStorage.setItem('userId', id); 
             navigate(`/admin/${id}`);
         } catch (err) {
             //setError(err.response.data.message || 'Something went wrong');
