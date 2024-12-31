@@ -2,6 +2,7 @@ const User = require("../models/userSchema")
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); 
 let blacklistedTokens = []; 
+require('dotenv').config();
 
 exports.login = async (req, res) => {
     const { email, password } = req.body; 

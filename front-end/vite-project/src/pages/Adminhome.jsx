@@ -14,7 +14,7 @@ const Adminhome = () => {
 
         if (!token) {
           // If no token is present, redirect to login
-          navigate('/login');
+          navigate('/');
         } else {
           // Fetch user data based on userId
           const response = await axios.get(`https://login-page-6789.onrender.com/auth/home/${userId}`, {
@@ -25,7 +25,7 @@ const Adminhome = () => {
         }
       } catch (error) {
         console.error("Error fetching user data:", error);
-        navigate('/login'); // Redirect to login if the token is invalid or expired
+        navigate('/'); // Redirect to login if the token is invalid or expired
       }
     };
 
