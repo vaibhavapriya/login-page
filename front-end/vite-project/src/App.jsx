@@ -9,7 +9,7 @@ import Adminhome from './pages/Adminhome';
 const ProtectedRoute = ({ children }) => {
   const isAuthenticated = localStorage.getItem('token'); // Replace with your auth logic
 
-  return isAuthenticated ? children : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/" />;
 };
 
 const App = () => {

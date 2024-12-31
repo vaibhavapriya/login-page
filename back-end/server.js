@@ -12,11 +12,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors()); // Use CORS middleware
-// app.use(cors({
-//     origin: 'http://localhost:5173',
-//     credentials: true,
-//   }));
+//app.use(cors()); // Use CORS middleware
+app.use(cors({
+    origin: 'https://login-page-6789.onrender.com',
+  }));
 app.use(express.json());
 
 // Routes

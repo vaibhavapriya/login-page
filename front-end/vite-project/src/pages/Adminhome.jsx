@@ -17,7 +17,7 @@ const Adminhome = () => {
           navigate('/login');
         } else {
           // Fetch user data based on userId
-          const response = await axios.get(`/auth/home/${userId}`, {
+          const response = await axios.get(`https://login-page-6789.onrender.com/auth/home/${userId}`, {
             headers: { Authorization: `Bearer ${token}` }, // Send token in request header
           });
 
