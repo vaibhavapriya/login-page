@@ -11,7 +11,7 @@ const Login = () => {
     const handleLogin = async () => {
         setError('');
         try {
-            const res = await axios.post('http://localhost:5000/auth/login', { email, password });
+            const res = await axios.post('https://login-page-6789.onrender.com/auth/login', { email, password });
             const { token, id } = res.data;
             localStorage.setItem('token', token);
             navigate(`/admin/${id}`);

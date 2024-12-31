@@ -7,9 +7,6 @@ require('dotenv').config();
 // Send password reset email
 exports.forgotPassword = async (req, res, next) => {
   const { email } = req.body;
-  console.log(process.env.SMTP_USER); // Check if the value is being read
-  console.log(process.env.SMTP_PASSWORD); // Should output the app password
-  console.log(email);
   try {
     const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ error: 'User not found' });
@@ -40,7 +37,7 @@ exports.forgotPassword = async (req, res, next) => {
       html: `<p>Click <a href="${resetLink}">here</a> to reset your password. This link expires in 15 minutes.</p>`,
     });
 
-    res.json({ message: 'Password reset link sent' });
+    res.json({ message: 'Password reset link sent',resetLink: resetLink });
   } catch (err) {
     next(err); // Forward error to errorHandler middleware
   }
