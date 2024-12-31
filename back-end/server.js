@@ -14,7 +14,7 @@ connectDB();
 // Middleware
 //app.use(cors()); // Use CORS middleware
 app.use(cors({
-    origin: 'https://login-page-6789.onrender.com',
+    origin: 'http://localhost:5173/',
   }));
 app.use(express.json());
 
