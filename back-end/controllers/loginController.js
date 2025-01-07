@@ -19,7 +19,7 @@ exports.forgotPassword = async (req, res, next) => {
     user.resetTokenExpiry = resetTokenExpiry;
     await user.save();
     
-    const resetLink = `http://localhost:5173/reset-password/${resetToken}`;
+    const resetLink = `https://enchanting-boba-171cce.netlify.app/reset-password/${resetToken}`;
 
     // Send email
     const transporter = nodemailer.createTransport({
