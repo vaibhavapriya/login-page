@@ -14,7 +14,7 @@ connectDB();
 // Middleware
 //app.use(cors()); // Use CORS middleware
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://enchanting-boba-171cce.netlify.app',
   }));
 app.use(express.json());
 
